@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">testingapp_current</string>
+    <string name = "place_holder">Enter smth</string>
 </resources>
