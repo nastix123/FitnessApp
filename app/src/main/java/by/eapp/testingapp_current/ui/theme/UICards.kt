@@ -56,7 +56,7 @@ import java.util.Locale
 val textColor = Color.Black
 val lst = listOf<String>("fitness", "gym", "ioga", "jump", "leg", "upper")
 
-@ExperimentalMaterial3Api
+
 @Composable
 fun SearchBar(modifier: Modifier = Modifier) {
     val message = remember {
@@ -185,9 +185,10 @@ fun HomeSection(
 fun HomeScreen (
     modifier: Modifier = Modifier
 ) {
-    Column(modifier
-        .verticalScroll(rememberScrollState())
-        .padding(vertical = 16.dp)) {
+    Column(
+        modifier
+            .verticalScroll(rememberScrollState())
+            .padding(vertical = 16.dp)) {
         Spacer(modifier = Modifier.padding(16.dp))
         SearchBar(Modifier.padding(horizontal = 16.dp))
         HomeSection(title = R.string.align_your_body) {
@@ -196,7 +197,8 @@ fun HomeScreen (
         HomeSection(title = R.string.favorite_collections) {
             CardCollection()
         }
-        Spacer(Modifier.height(16.dp))
+
+
     }
 }
 
