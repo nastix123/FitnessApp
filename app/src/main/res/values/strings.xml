@@ -3,13 +3,14 @@
     <string name = "place_holder">Enter smth</string>
 
     <string name = "jump_text">Cardio</string>
-    <string name = "cardio"> Running</string>
     <string name = "gym_text">GYM</string>>
     <string name = "ioga_text">Ioga</string>
     <string name = "fitness_text"> Fitness</string>
     <string name = "leg_text">Led-day</string>
     <string name = "upper_text">Upper-day</string>
     <string name="default_text">nothing</string>
+    <string name = "align_your_body">Align your body</string>
+    <string name = "favorite_collections">Favourite collections</string>
 
 
 
