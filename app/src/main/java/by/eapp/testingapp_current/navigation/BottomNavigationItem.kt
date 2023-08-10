@@ -1,4 +1,4 @@
-package by.eapp.testingapp_current
+package by.eapp.testingapp_current.navigation
 
 import androidx.compose.ui.graphics.vector.ImageVector
 
