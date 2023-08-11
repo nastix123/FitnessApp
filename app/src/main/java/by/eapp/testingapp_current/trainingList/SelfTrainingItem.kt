@@ -1,4 +1,4 @@
-package by.eapp.testingapp_current.TrainingList
+package by.eapp.testingapp_current.trainingList
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding

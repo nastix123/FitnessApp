@@ -2,7 +2,7 @@
     ExperimentalMaterial3Api::class
 )
 
-package by.eapp.testingapp_current.ui.theme
+package by.eapp.testingapp_current.ui.theme.customResources
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -21,11 +21,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -126,23 +124,6 @@ fun MaterialCard (
     }
 }
 
-/*@Composable
-fun mainCards (){
-    LazyColumn {
-        items(lst.size) { index ->
-            val iconName = lst[index]
-            val iconResourceId = getPictureId(iconName)
-            val textResourceId = getTextResourceId(iconName)
-
-            MaterialCard(drawable = iconResourceId, text = textResourceId)
-
-            Spacer(modifier = Modifier
-                .height(15.dp)
-                .width(15.dp))
-        }
-    }
-}*/
-
 @Composable
 fun CardCollection (
     modifier: Modifier = Modifier
@@ -154,7 +135,7 @@ fun CardCollection (
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        items(lst.size) {index ->
+        items(lst.size) { index ->
             val iconName = lst[index]
             val iconResourceId = getPictureId(iconName)
             val textResourceId = getTextResourceId(iconName)
@@ -202,3 +183,8 @@ fun HomeScreen (
     }
 }
 
+@Preview
+@Composable
+fun HOmeScreenPreview() {
+    HomeScreen()
+}

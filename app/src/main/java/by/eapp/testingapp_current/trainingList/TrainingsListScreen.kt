@@ -1,4 +1,4 @@
-package by.eapp.testingapp_current.TrainingList
+package by.eapp.testingapp_current.trainingList
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable

@@ -1,4 +1,4 @@
-package by.eapp.testingapp_current.ui.theme
+package by.eapp.testingapp_current.ui.theme.customResources
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

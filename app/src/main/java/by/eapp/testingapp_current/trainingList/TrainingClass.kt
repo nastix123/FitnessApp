@@ -1,4 +1,4 @@
-package by.eapp.testingapp_current.TrainingList
+package by.eapp.testingapp_current.trainingList
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

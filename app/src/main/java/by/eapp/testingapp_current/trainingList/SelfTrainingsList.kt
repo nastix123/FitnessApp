@@ -1,5 +1,5 @@
 
-package by.eapp.testingapp_current.TrainingList
+package by.eapp.testingapp_current.trainingList
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
