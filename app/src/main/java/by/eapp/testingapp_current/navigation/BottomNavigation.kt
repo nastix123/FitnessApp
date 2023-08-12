@@ -9,18 +9,11 @@ package by.eapp.testingapp_current.navigation
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
@@ -31,7 +24,9 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import by.eapp.testingapp_current.ui.theme.customResources.HomeScreen
+import by.eapp.testingapp_current.progressBar.CircularProgressBar
+import by.eapp.testingapp_current.trainingList.TrainingListScreen
+import by.eapp.testingapp_current.ui.theme.homeScreenUI.HomeScreen
 
 
 @Composable
@@ -87,8 +82,8 @@ fun BottomNavigation(navController: NavController, modifier: Modifier = Modifier
     ) { innerPadding ->
         NavHost(navController, startDestination = NavigationItem.Home.route, Modifier.padding(innerPadding)) {
             composable(NavigationItem.Trainings.route) { HomeScreen() }
-            composable(NavigationItem.Calorie.route) { Text(text = "Govno") }
-            composable(NavigationItem.Home.route) { Text(text = "Govno2")}
+            composable(NavigationItem.Calorie.route) { TrainingListScreen() }
+            composable(NavigationItem.Home.route) { CircularProgressBar() }
         }
     }
 }

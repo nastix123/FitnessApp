@@ -2,7 +2,7 @@
     ExperimentalMaterial3Api::class
 )
 
-package by.eapp.testingapp_current.ui.theme.customResources
+package by.eapp.testingapp_current.ui.theme.homeScreenUI
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -34,7 +34,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -49,12 +48,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import by.eapp.testingapp_current.R
+import by.eapp.testingapp_current.ui.theme.customResources.getPictureId
+import by.eapp.testingapp_current.ui.theme.customResources.getTextResourceId
 import java.util.Locale
 
 val textColor = Color.Black
 val lst = listOf<String>("fitness", "gym", "ioga", "jump", "leg", "upper")
 
 
+@Suppress("DEPRECATION")
 @Composable
 fun SearchBar(modifier: Modifier = Modifier) {
     val message = remember {
@@ -70,9 +72,9 @@ fun SearchBar(modifier: Modifier = Modifier) {
                 contentDescription = null
             )
         },
-        colors = TextFieldDefaults.textFieldColors(
+        /*colors = TextFieldDefaults.textFieldColors(
             textColor = textColor
-        ),
+        ),*/
         placeholder = {
             Text(stringResource(R.string.place_holder))
         },

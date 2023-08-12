@@ -1,8 +1,9 @@
-package by.eapp.testingapp_current.ui.theme.customResources
+package by.eapp.testingapp_current.ui.theme.homeScreenUI
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -22,16 +23,19 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import by.eapp.testingapp_current.ui.theme.customResources.getPictureId
+import by.eapp.testingapp_current.ui.theme.customResources.getTextResourceId
 
 @Composable
 fun AlignYourBodyElement(
     @DrawableRes drawable: Int,
     @StringRes text: Int,
+    onClick: @Composable () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier
+        modifier = modifier.clickable { onClick }
     ) {
         Image(
             painter = painterResource(drawable),
@@ -58,7 +62,7 @@ fun RowOfCircles() {
             val iconResourceId = getPictureId(iconName)
             val textResourceId = getTextResourceId(iconName)
 
-            AlignYourBodyElement(drawable = iconResourceId, text = textResourceId)
+            AlignYourBodyElement(drawable = iconResourceId, text = textResourceId, onClick = {})
 
             Spacer(modifier = Modifier
                 .height(10.dp)
