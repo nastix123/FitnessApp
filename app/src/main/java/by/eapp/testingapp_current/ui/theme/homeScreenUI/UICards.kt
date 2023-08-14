@@ -29,6 +29,8 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardColors
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -42,6 +44,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -95,32 +98,33 @@ fun MaterialCard (
     modifier: Modifier = Modifier
 ) {
     Card(
-        modifier = Modifier
+        modifier = modifier
             .height(80.dp)
-            .width(192.dp)
+            .width(192.dp),
+        colors = CardDefaults.cardColors(containerColor = colorResource(id = R.color.purple_1))
 
         ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Start,
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxSize()
                 .padding(5.dp)
         ) {
-
             Image(
                 painter = painterResource(id = drawable),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
-                modifier = Modifier
+                modifier = modifier
                     .size(70.dp)
                     .clip(RoundedCornerShape(10.dp))
             )
             Text(
                 text = stringResource(id = text),
                 style = MaterialTheme.typography.bodyMedium,
-                fontSize = 13.sp,
-                modifier = Modifier.padding(start = 15.dp)
+                fontSize = 14.sp,
+                modifier = modifier.padding(start = 15.dp,top = 10.dp),
+
             )
         }
     }
@@ -172,7 +176,7 @@ fun HomeScreen (
         modifier
             .verticalScroll(rememberScrollState())
             .padding(vertical = 16.dp)) {
-        Spacer(modifier = Modifier.padding(16.dp))
+
         SearchBar(Modifier.padding(horizontal = 16.dp))
         HomeSection(title = R.string.align_your_body) {
             RowOfCircles()

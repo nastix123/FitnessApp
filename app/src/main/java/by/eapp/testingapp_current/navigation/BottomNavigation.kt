@@ -20,11 +20,15 @@ import androidx.navigation.compose.rememberNavController
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import by.eapp.testingapp_current.R
 import by.eapp.testingapp_current.progressBar.CircularProgressBar
+import by.eapp.testingapp_current.trainInformation.TrainInformationScreen
 import by.eapp.testingapp_current.trainingList.TrainingListScreen
 import by.eapp.testingapp_current.ui.theme.homeScreenUI.HomeScreen
 
@@ -51,8 +55,9 @@ fun BottomNavigation(navController: NavController, modifier: Modifier = Modifier
     )
     val navController = rememberNavController()
     Scaffold(
+        containerColor = colorResource(id = R.color.purple_2),
         bottomBar = {
-            BottomNavigation {
+            BottomNavigation (backgroundColor = colorResource(id = R.color.purple_1)) {
                 val navBackStackEntry by navController.currentBackStackEntryAsState()
                 val currentDestination = navBackStackEntry?.destination
                 items.forEach { item ->
@@ -62,16 +67,10 @@ fun BottomNavigation(navController: NavController, modifier: Modifier = Modifier
                         selected = currentDestination?.hierarchy?.any { it.route == item.route } == true,
                         onClick = {
                             navController.navigate(item.route) {
-                                // Pop up to the start destination of the graph to
-                                // avoid building up a large stack of destinations
-                                // on the back stack as users select items
                                 popUpTo(navController.graph.findStartDestination().id) {
                                     saveState = true
                                 }
-                                // Avoid multiple copies of the same destination when
-                                // reselecting the same item
                                 launchSingleTop = true
-                                // Restore state when reselecting a previously selected item
                                 restoreState = true
                             }
                         }
@@ -81,9 +80,9 @@ fun BottomNavigation(navController: NavController, modifier: Modifier = Modifier
         }
     ) { innerPadding ->
         NavHost(navController, startDestination = NavigationItem.Home.route, Modifier.padding(innerPadding)) {
-            composable(NavigationItem.Trainings.route) { HomeScreen() }
-            composable(NavigationItem.Calorie.route) { TrainingListScreen() }
-            composable(NavigationItem.Home.route) { CircularProgressBar() }
+            composable(NavigationItem.Trainings.route) { TrainingListScreen() }
+            composable(NavigationItem.Calorie.route) { TrainInformationScreen() }
+            composable(NavigationItem.Home.route) { HomeScreen() }
         }
     }
 }

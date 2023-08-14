@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -19,10 +20,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import by.eapp.testingapp_current.R
 import by.eapp.testingapp_current.ui.theme.customResources.getPictureId
 import by.eapp.testingapp_current.ui.theme.customResources.getTextResourceId
 
@@ -37,19 +41,25 @@ fun AlignYourBodyElement(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier.clickable { onClick }
     ) {
+
         Image(
             painter = painterResource(drawable),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
-                .size(88.dp)
-                .clip(CircleShape)
-        )
+                .size(120.dp)
+                .clip(MaterialTheme.shapes.small.copy(
+                    topStart = CornerSize(10.dp),
+                    topEnd = CornerSize(10.dp),
+                    bottomStart = CornerSize(10.dp),
+                    bottomEnd = CornerSize(10.dp)
+                )
+        ))
         Text(
             text = stringResource(text),
             style = MaterialTheme.typography.labelMedium,
             modifier = Modifier.paddingFromBaseline(24.dp, 8.dp),
-            color = Color.White
+            color = Color.Black
         )
     }
 }

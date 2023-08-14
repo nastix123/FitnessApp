@@ -25,12 +25,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import by.eapp.testingapp_current.R
 
 @Composable
 fun CircularProgressBar(
@@ -44,7 +46,7 @@ fun CircularProgressBar(
     indicatorThickness: Dp = 28.dp,
     animationDuration: Int = 1000,
     animationDelay: Int = 0,
-    foregroundIndicatorColor: Color = Color(0xFF35898f),
+    foregroundIndicatorColor: Color = colorResource(id = R.color.purple_1),
     backgroundIndicatorColor: Color = Color.LightGray.copy(alpha = 0.3f),
     modifier: Modifier = Modifier.fillMaxSize(1f)
     ) {
@@ -63,12 +65,12 @@ fun CircularProgressBar(
     LaunchedEffect(Unit) {
         numberR = number
     }
-Column(verticalArrangement = Arrangement.Center,
-horizontalAlignment = Alignment.CenterHorizontally,
+Column(
+    verticalArrangement = Arrangement.Center,
+    horizontalAlignment = Alignment.CenterHorizontally,
     modifier = modifier
-        .padding(vertical = 16.dp)) {
-
-
+        .padding(vertical = 16.dp)
+    ) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
@@ -97,10 +99,9 @@ horizontalAlignment = Alignment.CenterHorizontally,
             style = numberStyle
         )
     }
-
     Spacer(modifier = Modifier.height(32.dp))
-
     ButtonProgressbar {
         numberR = (1..100).random().toFloat()
-    }}
+    }
+    }
 }

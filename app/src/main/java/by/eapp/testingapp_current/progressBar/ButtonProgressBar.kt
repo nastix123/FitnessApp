@@ -5,7 +5,9 @@ import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.sp
+import by.eapp.testingapp_current.R
 
 @Composable
 public fun ButtonProgressbar(
@@ -17,7 +19,7 @@ public fun ButtonProgressbar(
             onClickButton()
         },
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = backgroundColor
+            backgroundColor = colorResource(id = R.color.purple_1)
         )
     ) {
         Text(
