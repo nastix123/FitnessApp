@@ -55,7 +55,7 @@ import by.eapp.testingapp_current.ui.theme.customResources.getPictureId
 import by.eapp.testingapp_current.ui.theme.customResources.getTextResourceId
 import java.util.Locale
 
-val textColor = Color.Black
+
 val lst = listOf<String>("fitness", "gym", "ioga", "jump", "leg", "upper")
 
 
@@ -75,9 +75,7 @@ fun SearchBar(modifier: Modifier = Modifier) {
                 contentDescription = null
             )
         },
-        /*colors = TextFieldDefaults.textFieldColors(
-            textColor = textColor
-        ),*/
+
         placeholder = {
             Text(stringResource(R.string.place_holder))
         },

@@ -11,6 +11,8 @@
     <string name="default_text">nothing</string>
     <string name = "align_your_body">Align your body</string>
     <string name = "favorite_collections">Favourite collections</string>
+    <string name = "description_gym">Training based on GYM tools</string>
+    <string name = "exercise_press_1">Russian twist</string>
 
 
 
